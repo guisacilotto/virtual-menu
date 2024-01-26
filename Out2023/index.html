@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Menu do Restaurante</title>
+</head>
+
+<body>
+    <div id="background-container">
+        <button id="voltar-btn">Voltar</button>
+        <div id="order-confirmation-message" style="display: none;">
+            <p>Seu pedido está a caminho!</p>
+        </div>
+        <div id="initial-message" class="message-box">
+            <h2>Bem vindo ao nosso Restaurante!</h2>
+            <p>Deseja um cardápio físico?</p>
+            <div class="button-container">
+                <button onclick="showPhysicalMenu()">Sim</button>
+                <button onclick="showVirtualMenu()">Não</button>
+            </div>
+        </div>
+        <div id="virtual-menu" style="display: none;">
+            <div id="food-menu">
+                <h2>Comidas</h2>
+                <div id="food-options"></div>
+            </div>
+            <div id="drink-menu">
+                <h2>Bebidas</h2>
+                <div id="drink-options"></div>
+            </div>
+            <div id="dessert-menu">
+                <h2>Sobremesas</h2>
+                <div id="dessert-options"></div>
+            </div>
+            <div id="user-selection" style="display: flex;">
+                <div id="selected-items"></div>
+                <p><span id="total-price"></span></p>
+                <button id="finalize-order-btn" onclick="finalizeOrder()">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2023 Guilherme Sacilotto. Todos os direitos reservados.</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

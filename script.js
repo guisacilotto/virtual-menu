@@ -223,6 +223,16 @@ function removeSelectedItem(category, index) {
 document.addEventListener("DOMContentLoaded", function() {
     toggleBackButtonVisibility(false);
 });
+document.addEventListener("DOMContentLoaded", function() {
+    toggleBackButtonVisibility(false);
+
+    const voltarBtn = document.getElementById("voltar-btn");
+    if (voltarBtn) {
+        voltarBtn.addEventListener("click", function() {
+            window.location.href = "https://creative-sunshine-9c1597.netlify.app/";
+        });
+    }
+});
 
 function toggleBackButtonVisibility(show) {
     const backButton = document.getElementById("voltar-btn");

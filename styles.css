@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
     background-image: url('images/background.jpg');
@@ -54,6 +56,7 @@ body {
 .dialog-container input,
 .dialog-container textarea,
 .dialog-container button {
+    font-family: 'Merriweather', serif;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -141,14 +144,15 @@ body {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
-    cursor: pointer;
     border: 2px solid transparent;
     border-radius: 50%;
     transition: border-color 0.3s ease;
 }
 
-.menu-item img:hover {
+.menu-item:hover {
     border-color: #3498db;
+    border: 2px solid #3498db;
+    cursor: pointer;
 }
 
 .menu-item p {
@@ -165,15 +169,34 @@ body {
     flex-direction: column;
 }
 
-#initial-message,
-#physical-menu-message,
 #virtual-menu {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    max-height: 80vh;
 }
 
-#initial-message p {
-    font-size: 24px;
-    margin-bottom: 20px;
+#initial-message,
+#physical-menu-message {
+    text-align: center;
+
+}
+
+#initial-message p,
+#initial-message h2,
+#food-menu h2,
+#drink-menu h2,
+#dessert-menu h2 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#initial-message h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
 }
 
 button {
@@ -236,7 +259,7 @@ ul.selected-list {
 }
 
 li {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 

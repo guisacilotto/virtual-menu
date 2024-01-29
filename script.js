@@ -41,32 +41,27 @@ function updatePricesWithMargin(marginPercent) {
 updatePricesWithMargin(10);
 
 function showPhysicalMenu() {
-    document.getElementById("initial-message").style.display = "none";
 
     const initialMessage = document.getElementById("initial-message");
-    initialMessage.style.display = "block";
+    initialMessage.innerHTML = '<h2 style="font-size: 20px; font-weight: 700; color: #333;">O cardápio físico já está a caminho!</h2>';
+    toggleBackButtonVisibility(true);
 
-    const notification = document.createElement("div");
-    notification.className = "notification";
-    notification.textContent = "O cardápio físico já está a caminho!";
-    document.body.appendChild(notification);
+    const buttonContainer = initialMessage.querySelector('.button-container');
+    if (buttonContainer) {
+        buttonContainer.style.display = 'none';
+    }
 
-    notification.classList.add("show");
-
-    setTimeout(() => {
-        notification.classList.remove("show");
-
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 500);
-    }, 3000);
+    const backButton = document.getElementById('voltar-btn');
+    if (backButton) {
+        backButton.style.display = 'block';
+    }
 }
 
 function showVirtualMenu() {
     document.getElementById("initial-message").style.display = "none";
     document.getElementById("virtual-menu").style.display = "flex";
     document.getElementById("total-price").textContent = 'Total: R$ 0,00';
-
+    toggleBackButtonVisibility(true);
     console.log('showVirtualMenu');
 
     const foodContainer = document.getElementById("food-options");
@@ -104,6 +99,7 @@ function createItemElement(item, category) {
     itemDescription.textContent = item.description;
     itemDescription.style.fontStyle = "italic";
     itemDescription.style.fontSize = "smaller";
+    itemDescription.style.fontSize = "10px";
 
     container.appendChild(image);
     container.appendChild(itemName);
@@ -225,6 +221,11 @@ function removeSelectedItem(category, index) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    toggleBackButtonVisibility(false);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    toggleBackButtonVisibility(false);
+
     const voltarBtn = document.getElementById("voltar-btn");
     if (voltarBtn) {
         voltarBtn.addEventListener("click", function () {
@@ -232,6 +233,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+function toggleBackButtonVisibility(show) {
+    const backButton = document.getElementById("voltar-btn");
+    if (backButton) {
+        backButton.style.display = show ? "block" : "none";
+    }
+}
 
 function finalizeOrder() {
     document.getElementById("total-price").textContent = 'Total: R$ 0,00';

@@ -221,11 +221,6 @@ function removeSelectedItem(category, index) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    toggleBackButtonVisibility(false);
-});
-document.addEventListener("DOMContentLoaded", function () {
-    toggleBackButtonVisibility(false);
-
     const voltarBtn = document.getElementById("voltar-btn");
     if (voltarBtn) {
         voltarBtn.addEventListener("click", function () {

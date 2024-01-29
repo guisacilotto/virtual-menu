@@ -56,7 +56,6 @@ body {
 .dialog-container input,
 .dialog-container textarea,
 .dialog-container button {
-    font-family: 'Merriweather', serif;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -178,25 +177,24 @@ body {
     max-height: 80vh;
 }
 
+#virtual-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    max-height: 80vh;
+}
+
 #initial-message,
 #physical-menu-message {
     text-align: center;
 
 }
 
-#initial-message p,
-#initial-message h2,
-#food-menu h2,
-#drink-menu h2,
-#dessert-menu h2 {
-    font-size: 17px;
-    font-weight: 400;
-}
-
-#initial-message h2 {
-    font-size: 25px;
-    font-weight: 700;
-    color: #333;
+#initial-message p {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 button {

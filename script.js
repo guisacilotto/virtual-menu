@@ -133,7 +133,7 @@ function selectItem(category, item) {
     observationInput.rows = "4";
     dialogContainer.appendChild(observationInput);
 
-    quantityInput.oninput = function () {
+    quantityInput.oninput = function() {
         const value = parseInt(quantityInput.value);
         if (isNaN(value) || value < 1 || value > 50) {
             errorMessage.textContent = "Quantidade Inválida";
@@ -220,10 +220,15 @@ function removeSelectedItem(category, index) {
     updateSelectedItems();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+    toggleBackButtonVisibility(false);
+});
+document.addEventListener("DOMContentLoaded", function() {
+    toggleBackButtonVisibility(false);
+
     const voltarBtn = document.getElementById("voltar-btn");
     if (voltarBtn) {
-        voltarBtn.addEventListener("click", function () {
+        voltarBtn.addEventListener("click", function() {
             window.location.href = "https://creative-sunshine-9c1597.netlify.app/";
         });
     }
@@ -238,7 +243,7 @@ function toggleBackButtonVisibility(show) {
 
 function finalizeOrder() {
     document.getElementById("total-price").textContent = 'Total: R$ 0,00';
-
+    
     for (const category in selections) {
         selections[category] = [];
     }

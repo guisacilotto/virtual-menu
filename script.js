@@ -121,8 +121,7 @@ function selectItem(category, item) {
     quantityInput.type = "number";
     quantityInput.min = "1";
     quantityInput.max = "50";
-    quantityInput.style.fontSize = "smaller";
-    quantityInput.style.fontSize = "10px";
+    quantityInput.style.fontSize = "13px";
     dialogContainer.appendChild(quantityInput);
 
     const errorMessage = document.createElement("span");
@@ -133,8 +132,7 @@ function selectItem(category, item) {
     const observationInput = document.createElement("textarea");
     observationInput.placeholder = "Observação";
     observationInput.rows = "4";
-    observationInput.style.fontSize = "smaller";
-    observationInput.style.fontSize = "10px";
+    observationInput.style.fontSize = "13px";
     dialogContainer.appendChild(observationInput);
 
     quantityInput.oninput = function() {

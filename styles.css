@@ -40,40 +40,41 @@ body {
     padding: 20px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 10px; 
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch; 
 }
 
 .dialog-container h2 {
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.25rem; 
 }
 
 .dialog-container input,
 .dialog-container textarea,
 .dialog-container button {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-family: 'Merriweather', serif;
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
     font-size: 1rem;
 }
 
 .dialog-container textarea {
-    width: 100%;
-    box-sizing: border-box;
-    resize: vertical;
+    width: 100%; 
+    box-sizing: border-box; 
+    resize: vertical; 
 }
 
 .dialog-container button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+    background-color: #3498db; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
     transition: background-color 0.3s;
 }
 
@@ -135,7 +136,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
 }
 
@@ -156,7 +157,7 @@ body {
 
 .menu-item p {
     font-size: 12px;
-    margin: 0;
+    margin: 0; 
 }
 
 #user-selection {
@@ -176,25 +177,21 @@ body {
     overflow: auto;
     max-height: 80vh;
 }
-
-#virtual-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: auto;
-    max-height: 80vh;
-}
-
 #initial-message,
 #physical-menu-message {
     text-align: center;
 
 }
 
-#initial-message p {
-    font-size: 24px;
-    margin-bottom: 20px;
+#initial-message p, #initial-message h2, #food-menu h2, #drink-menu h2, #dessert-menu h2 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#initial-message h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
 }
 
 button {
@@ -266,7 +263,7 @@ li {
     font-size: 16px;
 }
 
-.notification {
+  .notification {
     position: fixed;
     top: 10px;
     left: 50%;
@@ -290,11 +287,11 @@ li {
 .observation {
     font-size: 14px;
     margin-top: 5px;
-    max-width: 250px;
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+    max-width: 250px; 
+    word-wrap: break-word; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal; 
 
 }
 
@@ -303,9 +300,9 @@ li {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    background: #fff; 
+    padding: 10px; 
+    border-radius: 5px; 
 }
 
 .selected-list li .item-details {
@@ -314,10 +311,10 @@ li {
 
 .selected-list li .observation {
     flex-basis: 50%;
-    margin-left: 10px;
-    background-color: #f9f9f9;
-    border-left: 2px solid #ccc;
-    padding-left: 10px;
+    margin-left: 10px; 
+    background-color: #f9f9f9; 
+    border-left: 2px solid #ccc; 
+    padding-left: 10px; 
 }
 
 .selected-list li button.remove-button {

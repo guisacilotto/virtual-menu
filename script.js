@@ -62,7 +62,6 @@ function showVirtualMenu() {
     document.getElementById("virtual-menu").style.display = "flex";
     document.getElementById("total-price").textContent = 'Total: R$ 0,00';
     toggleBackButtonVisibility(true);
-    console.log('showVirtualMenu');
 
     const foodContainer = document.getElementById("food-options");
     menuItems.foods.forEach(food => {
@@ -150,7 +149,8 @@ function selectItem(category, item) {
     okButton.onclick = () => {
         const quantity = parseInt(quantityInput.value);
         if (!isNaN(quantity) && quantity >= 1 && quantity <= 50) {
-            const selectedItem = { ...item, quantity };
+            const observation = observationInput.value; // Obtenha a observação inserida
+            const selectedItem = { ...item, quantity, observation }; // Adicione a observação ao objeto selectedItem
             selections[category].push(selectedItem);
             updateSelectedItems();
             document.body.removeChild(dialogContainer);
@@ -160,7 +160,6 @@ function selectItem(category, item) {
         }
     };
     dialogContainer.appendChild(okButton);
-
 
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "Cancelar";
@@ -225,6 +224,7 @@ function removeSelectedItem(category, index) {
 document.addEventListener("DOMContentLoaded", function() {
     toggleBackButtonVisibility(false);
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     toggleBackButtonVisibility(false);
 

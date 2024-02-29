@@ -146,6 +146,7 @@ function selectItem(category, item) {
 
     const okButton = document.createElement("button");
     okButton.textContent = "OK";
+    okButton.style.fontSize = "13px";
     okButton.onclick = () => {
         const quantity = parseInt(quantityInput.value);
         if (!isNaN(quantity) && quantity >= 1 && quantity <= 50) {
@@ -163,6 +164,7 @@ function selectItem(category, item) {
 
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "Cancelar";
+    cancelButton.style.fontSize = "13px";
     cancelButton.onclick = () => {
         document.body.removeChild(dialogContainer);
     };
@@ -244,6 +246,37 @@ function toggleBackButtonVisibility(show) {
 }
 
 function finalizeOrder() {
+    const confirmationDialog = document.createElement("div");
+    confirmationDialog.className = "dialog-container";
+
+    const confirmationMessage = document.createElement("h2");
+    confirmationMessage.textContent = "Deseja confirmar o pedido?";
+    confirmationMessage.style.fontSize = "13px";
+    confirmationDialog.appendChild(confirmationMessage);
+
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Sim";
+    confirmButton.style.fontSize = "13px";
+    confirmButton.onclick = () => {
+        clearOrderList();
+        document.body.removeChild(confirmationDialog);
+        // Retornar para a página inicial
+        window.location.href = "index.html";
+    };
+    confirmationDialog.appendChild(confirmButton);
+
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Não";
+    cancelButton.style.fontSize = "13px";
+    cancelButton.onclick = () => {
+        document.body.removeChild(confirmationDialog);
+    };
+    confirmationDialog.appendChild(cancelButton);
+
+    document.body.appendChild(confirmationDialog);
+}
+
+function clearOrderList() {
     document.getElementById("total-price").textContent = 'Total: R$ 0,00';
     
     for (const category in selections) {
@@ -251,18 +284,4 @@ function finalizeOrder() {
     }
 
     updateSelectedItems();
-    const orderDialog = document.createElement("div");
-    orderDialog.className = "notification";
-    orderDialog.textContent = "Seu pedido está a caminho!";
-    document.body.appendChild(orderDialog);
-
-    orderDialog.classList.add("show");
-
-    setTimeout(() => {
-        orderDialog.classList.remove("show");
-
-        setTimeout(() => {
-            document.body.removeChild(orderDialog);
-        }, 500);
-    }, 3000);
 }
